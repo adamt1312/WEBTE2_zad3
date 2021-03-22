@@ -15,12 +15,15 @@ if ($uc->loginValidation($_POST['email'],$_POST['password'])) {
         $ga = new PHPGangsta_GoogleAuthenticator();
         $result = $ga->verifyCode($secret, $code);
 
+        // login existing user
         if ($result == 1) {
             session_start();
             $_SESSION['email'] = $_POST['email'];
             $uc->recordLog($uc->getUserId($_POST['email']));
             header('Location: https://wt156.fei.stuba.sk/authentication/home.php');
-        } else {
+        }
+        // wrong credentials
+        else {
             echo '<a href="index.php">Wrong code, login failed, click to try again.<a/>';
         }
     }

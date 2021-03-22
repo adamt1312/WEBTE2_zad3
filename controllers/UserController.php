@@ -96,8 +96,10 @@ class UserController
         $stmt->execute();
         $logs = $stmt->fetchAll(PDO::FETCH_CLASS, "Log");
         $user->setLogs($logs);
-
-        return $user;
+        if (isset($user)) {
+            return $user;
+        }
+        else return null;
     }
 
 
@@ -129,8 +131,10 @@ class UserController
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
         $uid = $stmt->fetch();
-
-        return $uid['id'];
+        if (isset($uid)) {
+            return $uid['id'];
+        }
+        else return null;
     }
 
     public function getClassicType() {

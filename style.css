@@ -15,10 +15,13 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    width: 175px;
+    width: fit-content;
     transition: transform .2s;
 }
 .info:hover {
     background-color: #5353D5;
     transform: scale(1.2);
 }
+
+
+

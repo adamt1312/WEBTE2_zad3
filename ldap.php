@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if (isset($_SESSION['email'])) {
-        header('Location: https://wt156.fei.stuba.sk/authentication/home.php');
-    }
+session_start();
+if (isset($_SESSION['email'])) {
+    header('Location: https://wt156.fei.stuba.sk/authentication/home.php');
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,18 +31,14 @@
                     </label>
                 </div>
 
-                <form method="post" action="login_handler.php" style="font-family: 'Exo';" >
+                <form method="post" action="ldap_handler.php" style="font-family: 'Exo';" >
 
                     <div>
-                        <input type="email" placeholder="Email" name="email" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
+                        <input type="text" placeholder="AIS Login" name="ais_login" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
                     </div>
 
                     <div class="mt-7">
-                        <input type="password" placeholder="Password"  name="password" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
-                    </div>
-
-                    <div class="mt-7">
-                        <input type="number" placeholder="Google code"  name="google_code" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
+                        <input type="password" placeholder="AIS Password"  name="ais_password" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
                     </div>
 
                     <div class="mt-7">
@@ -53,29 +49,10 @@
 
                     <div class="mt-7 flex">
                         <div class="w-full text-center">
-                            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="signup.php">
-                                Switch to sign up
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="index.php">
+                                Switch to classic login
                             </a>
                         </div>
-                    </div>
-
-
-                    <div class="flex mt-7 items-center text-center">
-                        <hr class="border-gray-300 border-1 w-full rounded-md">
-                        <label class="block font-medium text-sm text-gray-700 w-full">
-                            Or login with
-                        </label>
-                        <hr class="border-gray-300 border-1 w-full rounded-md">
-                    </div>
-
-                    <div class="flex mt-7 justify-center w-full" style="height: 70px;">
-                        <button class="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105" style="height: 45px;">
-                            <a href="ldap.php">LDAP</a>
-                        </button>
-
-                        <button class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105" style="height: 45px;">
-                            <a href="google.php">Google</a>
-                        </button>
                     </div>
                 </form>
             </div>
