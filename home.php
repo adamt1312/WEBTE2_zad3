@@ -27,7 +27,7 @@ $user = $uc->getUser($u_email);
 <div class="w-full h-screen bg-center bg-no-repeat bg-cover" style="background-image: url('https://images.unsplash.com/photo-1609342475528-dd7d93e8311e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80');">
     <div class="w-full h-screen bg-opacity-50 bg-black flex justify-center items-center">
         <div class="mx-4 text-center text-white">
-            <h1 class="font-bold text-6xl mb-4">Welcome back <?= $user->getName() ?>, </h1>
+            <h1 class="font-bold text-6xl mb-4">Hey <?= $user->getName() ?>, </h1>
             <h2 class="font-bold text-3xl mb-12">This is your homepage</h2>
             <div id="infoWrapper">
                 <div class="info" style="height: fit-content">
@@ -48,20 +48,20 @@ $user = $uc->getUser($u_email);
                 </div>
             </div>
             <div>
-                <table class="rounded-t-lg m-5 w-5/6 mx-auto text-gray-100 bg-gradient-to-l from-indigo-500 to-indigo-800" style="display: none; margin-bottom: 3.5rem" id="tb1">
-                    <tr class="text-center border-b-2 border-indigo-300">
+                <table class="rounded-t-lg m-5 w-5/6 mx-auto text-gray-100 bg-gradient-to-l from-blue-500 to-blue-800" style="display: none; margin-bottom: 3.5rem" id="tb1">
+                    <tr class="text-center border-b-2 border-blue-300">
                         <th class="px-4 py-3">Log history</th>
                     </tr>
                     <?php
                         foreach ($user->getLogs() as $log) {
-                            echo "<tr class=\"text-center border-b-2 border-indigo-300\">
+                            echo "<tr class=\"text-center border-b-2 border-blue-300\">
                                         <th class=\"px-4 py-3\">".$log->getTimestamp()."</th>                               
                                  </tr>";
                         }
                     ?>
                 </table>
 
-                <table class="rounded-t-lg m-5 w-5/6 mx-auto text-pink-100 bg-red-700" style="display: none; margin-bottom: 3.5rem" id="tb2">
+                <table class="rounded-t-lg m-5 w-5/6 mx-auto text-pink-100 bg-gradient-to-l from-red-500 to-red-800" style="display: none; margin-bottom: 3.5rem" id="tb2">
                     <tr class="text-center border-b-2 border-red-200 font-bold">
                         <th class="px-4 py-3">Classic</th>
                         <th class="px-4 py-3">Google</th>
@@ -73,10 +73,10 @@ $user = $uc->getUser($u_email);
                         <td class="px-4 py-3 border-b border-red-500"><?= $uc->getLdapType() ?></td>
                     </tr>
                 </table>
-                <button class="bg-blue-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-2" style="background-color: #5353D5;" id="btn_tb1">
+                <button class="bg-blue-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-2" id="btn_tb1">
                     Show logs
                 </button>
-                <button class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-600 ml-2" id="btn_tb2">
+                <button class="bg-red-500 rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-red-800 ml-2" id="btn_tb2">
                     Show stats
                 </button>
             </div>

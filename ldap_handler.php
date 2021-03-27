@@ -31,7 +31,7 @@ if ($ldapconn) {
         // register new user
         else {
             $uc->registerUser($info[0]['givenname'][0],$info[0]['sn'][0],$info[0]['mail'][0],null,'ldap',null,null);
-            header('Location: https://wt156.fei.stuba.sk/authentication');
+            include 'ldap_google_register_notice.php';
         }
 
 //        echo $info[0]['cn'][0]."<br>";

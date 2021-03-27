@@ -38,7 +38,7 @@ class UserController
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $fetchedId = $stmt->fetch();
 
-        $this->recordLog($fetchedId['id']);
+//        $this->recordLog($fetchedId['id']);
 
 ////        $datetime = date("Y-m-d") . " " . date("h:i:sa");
 //        $stmt = $this->conn->prepare("insert into logs (user_id) values (:user_id)");

@@ -1,8 +1,12 @@
 <?php
-    session_start();
-    if (isset($_SESSION['email'])) {
-        header('Location: https://wt156.fei.stuba.sk/authentication/home.php');
-    }
+
+session_start();
+if (isset($_SESSION['email'])) {
+    header('Location: https://wt156.fei.stuba.sk/authentication/home.php');
+}
+
+include 'google.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -74,7 +78,7 @@
                         </button>
 
                         <button class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105" style="height: 45px;">
-                            <a href="google.php">Google</a>
+                            <a href="<?= filter_var($authUrl, FILTER_SANITIZE_URL) ?>">Google</a>
                         </button>
                     </div>
                 </form>
