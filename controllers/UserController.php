@@ -91,7 +91,7 @@ class UserController
         $stmt->execute();
         $user = $stmt->fetch();
 
-        $stmt = $this->conn->prepare("select user_id, timestamp from logs where user_id = :user_id order by timestamp DESC;");
+        $stmt = $this->conn->prepare("select user_id, timestamp from logs where user_id = :user_id order by timestamp DESC limit 10;");
         $stmt->bindParam(":user_id",$user->getId(), PDO::PARAM_INT);
         $stmt->execute();
         $logs = $stmt->fetchAll(PDO::FETCH_CLASS, "Log");

@@ -38,15 +38,15 @@ include 'google.php';
                 <form method="post" action="login_handler.php" style="font-family: 'Exo';" >
 
                     <div>
-                        <input type="email" placeholder="Email" name="email" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
+                        <input type="email" required placeholder="Email" name="email" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
                     </div>
 
                     <div class="mt-7">
-                        <input type="password" placeholder="Password"  name="password" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
+                        <input type="password" required placeholder="Password"  name="password" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
                     </div>
 
                     <div class="mt-7">
-                        <input type="number" placeholder="Google code"  name="google_code" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
+                        <input type="number" required placeholder="Google code"  name="google_code" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" style="text-indent: 15px;">
                     </div>
 
                     <div class="mt-7">
